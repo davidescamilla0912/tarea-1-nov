@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    </script>
+
+    <body>
+
+        <table>
+            <h1>PUNTO 1</h1>
+
+            <tr>
+
+                <td>Calificación 0/100</td>
+
+                <td><input type="number" id="calificacion"></td>
+
+            </tr>
+
+        </table>
+
+
+        <button onclick="evaluarCalificacion()">Evaluar</button>
+
+        <p id="resultado"></p>
+
+        <script>
+            function evaluarCalificacion() {
+                let calificacion = document.getElementById("calificacion").value;
+                calificacion = parseInt(calificacion);
+
+                let resultado = "";
+
+                if (calificacion >= 90) {
+                    resultado = "Aprobado con honores.";
+                } else if (calificacion >= 70) {
+                    resultado = "Aprobado.";
+                } else if (calificacion < 70) {
+                    resultado = "Reprobado.";
+                }
+
+                document.getElementById("resultado").innerText = resultado;
+            }
+        </script>
+        <h2>PUNTO 2</h2>
+        <table>
+            <tr>
+                <td>Par o Impar</td>
+                <td><input type="number" id="numero"></td>
+            </tr>
+        </table>
+
+        <button onclick="calcular()">Calcular</button>
+        <p id="resultado2"></p>
+
+        <script>
+            function calcular() {
+                let numero = document.getElementById("numero").value;
+                numero = parseInt(numero);
+                let resultado2 = "";
+
+                if (numero % 2 === 0) {
+                    resultado2 = "El número es par.";
+                } else {
+                    resultado2 = "El número es impar.";
+                }
+
+                document.getElementById("resultado2").innerText = resultado2;
+            }
+        </script>
+
+        <h3>PUNTO 3</h3>
+        <table>
+            <tr>
+                <td>
+                    EVALUACION DE DESCUENTOS
+                </td>
+                <td>
+                    <input type="number" id="monto">
+                </td>
+            </tr>
+        </table>
+        <button onclick="calculardes()">Calculardes</button>
+        <p id="resultado3"></p>
+        <script>
+            function calculardes() {
+                let monto = document.getElementById("monto").value;
+                monto = parseInt(monto);
+                let resultado3 = ""
+                if (monto > 100) {
+                    resultado3 = "descuento 10%"
+                } else {
+                    resultado3 = "no hay descuento"
+                }
+                document.getElementById("resultado3").innerText = resultado3;
+            }
+        </script>
+        <scrip>
+            <h4>PUNTO 4</h4>
+            <table>
+                <tr>
+                    <td>
+                        Adivinanza
+                    </td>
+                    <td>
+                        <input type="number" id="adivinanza">
+                    </td>
+                </tr>
+            </table>
+            <button onclick="ingresar()">Adivinar</button>
+            <p id="resultado4"></p>
+
+            <script>
+                const aleatorio = Math.floor(Math.random() * 10) + 1;
+
+                function ingresar() {
+                    let adivinanza = document.getElementById("adivinanza").value;
+                    adivinanza = parseInt(adivinanza);
+                    let resultado4 = "";
+
+                    if (adivinanza === aleatorio) {
+                        resultado4 = "¡FELICIDADES, ADIVINASTE!";
+                    } else {
+                        resultado4 = `Lo siento, era ${aleatorio}, donde x es el número generado.`;
+                    }
+
+                    document.getElementById("resultado4").innerText = resultado4;
+                }
+            </script>
+    </body>
+
+    <body>
+        <h4>Ingresa Números</h4>
+        <button onclick="ingresarNumeros()">Ingresar Números</button>
+        <p id="resultado"></p>
+
+        <script>
+            function ingresarNumeros() {
+                let numeros = [];
+                let numero;
+
+                while (true) {
+                    numero = parseInt(prompt("Ingresa un número (negativo para terminar):"));
+
+                    if (numero < 0) {
+                        break;
+                    }
+
+                    numeros.push(numero);
+                }
+
+                document.getElementById("resultado").innerText = "Números ingresados: " + numeros.join(", ");
+            }
+        </script>
+    </body>
+
+    <body>
+        <h4>Ingreso de Contraseña</h4>
+        <button onclick="ingresarContraseña()">Ingresar Contraseña</button>
+        <p id="resultado"></p>
+
+        <script>
+            function ingresarContraseña() {
+                const contraseñaCorrecta = "contraseña123";
+                let contraseña;
+
+
+                while (true) {
+                    contraseña = prompt("Ingresa la contraseña:");
+
+                    if (contraseña === contraseñaCorrecta) {
+                        document.getElementById("resultado").innerText = "¡Contraseña correcta!";
+                        break;
+                    } else {
+                        alert("Contraseña incorrecta. Inténtalo de nuevo.");
+                    }
+                }
+            }
+        </script>
+    </body>
+
+</html>
